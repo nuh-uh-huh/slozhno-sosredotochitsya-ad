@@ -17,32 +17,31 @@
 
   <body class="page">
     <header class="header decorated-zone">
-      <nav class="header__theme-menu">
-        <ul class="header__theme-menu-list">
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
-            >
-              День
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
-              disabled
-            >
-              Авто
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
-            >
-              Неон
-            </button>
-          </li>
-        </ul>
-      </nav>
+      <span class="header__rec" aria-hidden="true"></span>
+      <nav class="header__theme-menu">...</nav>
+      <h1 class="header__title">no focus</h1>
+      <p class="header__subtitle title-decor">Что делать, когда не можешь...</p>
+      <!-- другие элементы header -->
     </header>
+    <main class="main-content">
+      <section class="section">
+        <h2 class="section__title title-decor">Почему сосредоточиться...</h2>
+        <p>...</p>
+      </section>
+      <!-- остальные секции -->
+      <section class="gallery">
+        <h2 class="gallery__title title-decor">А можно в картинках?</h2>
+        <div class="gallery__grid">
+          <img src="./images/375-x-668-dark.jpg" alt="Закат в горах" loading="lazy" />
+          <img src="./images/768-x-1024-dark.jpg" alt="Десерт с животными" loading="lazy" />
+          <img src="./images/1024-x-768-dark.jpg" alt="Книги и кассетная лента" loading="lazy" />
+        </div>
+      </section>
+    </main>
+    <footer class="footer decorated-zone">
+      <h2 class="footer__title">focus</h2>
+      <!-- декоративные уголки через псевдоэлементы -->
+    </footer>
   </body>
+
 </html>
