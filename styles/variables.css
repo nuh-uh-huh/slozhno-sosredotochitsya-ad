@@ -1,4 +1,39 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+:root {
+  /* Цвета */
+  --accent-color: #ff0070;
+  --bg-color: #1a1b22;
+  --text-color: #f1b2ce;
+  --title-bg: #ff0070;
+  --section-bg: #313043;
+  --gallery-bg: #1a1b22;
+  --footer-bg: #1a1b22;
+  --decor-corner: #ff0070;
+  --decor-rec: #ff0070;
+
+  /* Тени */
+  --header-shadow: 4px 4px 0 var(--accent-color);
+  --link-shadow: 2px 2px 0 var(--accent-color);
+
+  /* Шрифты и размеры */
+  --font-family: 'IBM Plex Mono', monospace;
+  --font-size-base: 1.125rem; /* 18px */
+  --heading-font-size-min: 2.5rem; /* 40px, mobile min */
+  --heading-font-size-max: 9.8125rem; /* desktop max */
+
+  /* Layout */
+  --main-padding: 1rem;
+  --grid-gap: 1.25rem;
+  --border-radius: 12px;
+  --min-section-width: 375px;
+
+  /* Кнопки, интерактив */
+  --focus-outline: 2px solid var(--accent-color);
+  --transition-duration: .2s;
+
+  /* Для изображений */
+  --image-shadow: 0 4px 32px 0 rgba(0,0,0,0.08);
+
+  /* Для отступов и декоративной графики */
+  --gap-header-footer: 20px;
+  --corner-size: 36px;
+}
