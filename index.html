@@ -27,34 +27,57 @@
     <script src="./scripts/script.js" defer></script>
   </head>
 
-  <body class="page">
-    <header class="header decorated-zone">
-      <nav class="header__theme-menu">
-        <ul class="header__theme-menu-list">
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_light"
-            >
-              День
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_active header__theme-menu-button_type_auto"
-              disabled
-            >
-              Авто
-            </button>
-          </li>
-          <li class="header__theme-menu-item">
-            <button
-              class="header__theme-menu-button header__theme-menu-button_type_dark"
-            >
-              Неон
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  </body>
+<body class="page">
+  <header class="header decorated-zone">
+    <div class="header__top">
+      <div class="header__meta">
+        день / авто / ночь<br>1024 × 768<br>light
+      </div>
+    </div>
+    <div class="header__row">
+      <div class="header__title">no<br>focus</div>
+      <div class="header__info title-decor">
+        Что делать, когда не можешь делать ничего или почему так сложно сконцентрироваться, особенно когда очень надо
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="main__columns">
+      <section class="column column-1">
+        <!-- короткие секции, советы, “почему сложно” -->
+        <h2 class="section__title title-decor">Почему сосредоточиться так сложно</h2>
+        <div class="section__text">...</div>
+      </section>
+      <section class="column column-2">
+        <!-- подробный основной текст, советы, подробности -->
+        <h2 class="section__title title-decor">Что снижает концентрацию внимания</h2>
+        <div class="section__text">...</div>
+      </section>
+      <section class="column column-3">
+        <!-- дополнительные советы, заметки, подборки -->
+        <h2 class="section__title title-decor">В простых (на самом деле не очень) советах</h2>
+        <div class="section__text">...</div>
+      </section>
+    </div>
+
+    <section class="gallery">
+      <h2 class="gallery__title title-decor">А можно в картинках?</h2>
+      <div class="gallery__grid">
+        <img src="./images/sunset.png" alt="Закат в горах" loading="lazy" />
+        <img src="./images/ice-cream.png" alt="Десерт с мордочкой, украшенный фруктами" loading="lazy" />
+        <img src="./images/tape.png" alt="Книги со стапелем и кассетой" loading="lazy" />
+        <img src="./images/books.png" alt="Стопка книг" loading="lazy" />
+        <img src="./images/street.png" alt="Пустая улица в розово-фиолетовых тонах" loading="lazy" />
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer decorated-zone">
+    <h2 class="footer__title">focus</h2>
+  </footer>
+</body>
+
+
+
 </html>

@@ -4,6 +4,23 @@
   переключая тему
 */
 
+:root.theme-dark {
+  --accent-color: #ff8dcb;
+  --text-color-primary: #353430;
+  --button-text-color: #353430;
+  --button-border-default: transparent;
+  --button-border-active: #353430;
+  --button-border-hover: rgba(53, 52, 48, 0.4);
+
+  --background-image: url('../images/cover-image-light.png');
+  --background-color: #fff1f7;
+
+  --text-shadow: 4px 4px 0 var(--accent-color);
+
+  /* размеры и шрифты обычно не меняются */
+}
+
+
 :root.theme-light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
@@ -70,4 +87,43 @@
 .theme-light a:focus-visible {
   outline: none;
   box-shadow: 0 0 0 1px #353430;
+}
+
+:root {
+  --background-image: url('../images/cover-image-light.png');
+  --background-color: #fff1f7;
+  --accent-color: #ff8dcb;
+  --button-text-color: #353430;
+  --button-border-default: transparent;
+  --button-border-active: #353430;
+  --button-border-hover: rgba(53, 52, 48, 0.4);
+  --text-color-primary: #353430;
+  --text-shadow: none; /* Можно скорректировать или убрать, если надо */
+}
+
+/* Фоновое изображение страницы */
+.page {
+  background-image: var(--background-image);
+  background-color: var(--background-color);
+}
+
+/* Блок «Запись» - если имеется, задайте нужное изображение через переменную */
+.record-block {
+  background-image: url('../images/cover-image-light.png');
+  /* или другая картинка для светлой темы */
+}
+
+/* Стиль кнопок в шапке */
+.header__theme-menu-button {
+  color: var(--button-text-color);
+  border-color: var(--button-border-default);
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--button-border-active);
+}
+
+.header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+  border-color: var(--button-border-hover);
+  opacity: 1; /* чтобы текст всегда был непрозрачным */
 }

@@ -1,5 +1,87 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--background-color);
+  font-family: var(--font-family-base);
+  color: var(--text-color-primary);
+  padding: var(--padding-base);
+}
+
+/* Заголовки */
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--text-color-primary);
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  text-shadow: var(--text-shadow);
+}
+
+/* Пример заголовка с адаптивным размером */
+h1 {
+  font-size: var(--font-size-title-mobile);
+  text-shadow: var(--text-shadow);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-title-desktop);
+  }
+}
+
+/* Ссылки с тенью текста и состояниями */
+
+a {
+  color: var(--text-color-primary);
+  text-shadow: var(--text-shadow);
+  text-decoration: none;
+  position: relative;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+}
+
+a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--accent-color);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-color);
+}
+
+
+/* Базовые стили для всех экранов */
+
+/* Для экранов шире 768px */
+@media (min-width: 768px) {
+  .gallery__grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+/* Для экранов шире 1024px */
+@media (min-width: 1024px) {
+  .gallery__grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .header__grid-container, .footer__grid-container {
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  /* Подстройка отступов и размеров */
+  .page {
+    padding: 2rem 4rem;
+  }
 }
