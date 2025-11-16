@@ -1,5 +1,4 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* Основные стили проекта (тёмная тема по умолчанию) */
 .page {
   background-image: var(--background-image);
   background-position: center;
