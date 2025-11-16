@@ -45,5 +45,108 @@
 }
 
 .theme-dark .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+  background-color: #000028;
+}
+
+/* Основной цвет текста для кнопок */
+.theme-dark .header__theme-menu-button {
+  color: #FF0070;
+  border: 1px solid transparent; /* по умолчанию прозрачная граница */
+  position: relative;
+  background: none;
+  cursor: pointer;
+}
+
+/* Текст кнопок с цветом #FF0070 */
+.theme-dark .header__theme-menu-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Граница кнопки при выбранном состоянии */
+.theme-dark .header__theme-menu-button.header__theme-menu-button_active {
+  border-color: #FF0070;
+  pointer-events: none;
+}
+
+/* Граница кнопки при наведении */
+.theme-dark .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+  border-color: rgba(255, 0, 112, 0.4); /* #FF007066 с прозрачностью 40% */
+  /* opacity: 0.4; */
+}
+
+/* Линия под кнопкой при фокусе */
+.theme-dark .header__theme-menu-button:focus-visible {
+  box-shadow: 0 1px 0 0 #FF0070;
+}
+
+/* Стили для ссылок с цветом текста #F1B2CE и дублированием с отклонением */
+.theme-dark a {
+  color: #F1B2CE;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Дублирование текста с отклонением на 2px вниз и вправо */
+.theme-dark a::after {
+  content: attr(data-text); /* нужно добавить data-text с текстом ссылки в HTML */
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  color: #FF0070;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Подчеркивание текста ссылки при hover */
+.theme-dark a:hover {
+  text-decoration: underline;
+  text-decoration-color: #FF0070;
+}
+
+/* Рамка вокруг ссылки при фокусе */
+.theme-dark a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px #F1B2CE;
+}
+
+:root.theme-dark {
+  --background-image: url('../images/cover-image-dark.png');
+  --background-color: #000028;
+  --accent-color: #FF0070;
+  --button-text-color: #FF0070;
+  --button-border-default: transparent;
+  --button-border-active: #FF0070;
+  --button-border-hover: rgba(53, 52, 48, 0.4);
+  --text-color-primary: #F1B2CE;
+  --text-shadow: none; /* Можно скорректировать или убрать, если надо */
+}
+
+/* Фоновое изображение страницы */
+.page {
+  background-image: var(--background-image);
+  background-color: var(--background-color);
+}
+
+/* Блок «Запись» - если имеется, задайте нужное изображение через переменную */
+.record-block {
+  background-image: url('../images/cover-image-dark.png');
+  /* или другая картинка для светлой темы */
+}
+
+/* Стиль кнопок в шапке */
+.header__theme-menu-button {
+  color: var(--button-text-color);
+  border-color: var(--button-border-default);
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--button-border-active);
+}
+
+.header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+  border-color: var(--button-border-hover);
+  opacity: 1; /* чтобы текст всегда был непрозрачным */
 }
