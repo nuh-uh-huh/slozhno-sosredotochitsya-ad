@@ -12,5 +12,62 @@
 }
 
 .theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
+  background-color: #FFF1F7;
+}
+
+/* Цвет текста кнопок */
+.theme-light .header__theme-menu-button {
+  color: #353430;
+  border: 1px solid transparent; /* по умолчанию прозрачная граница */
+  background: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Стиль для выбранной кнопки */
+.theme-light .header__theme-menu-button.header__theme-menu-button_active {
+  border-color: #353430;
+  pointer-events: none;
+}
+
+/* Стиль для кнопки при наведении */
+.theme-light .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
+  border-color: rgba(53, 52, 48, 0.4); /* #353430 с прозрачностью 40% */
+}
+
+/* Линия под кнопкой при фокусе */
+.theme-light .header__theme-menu-button:focus-visible {
+  box-shadow: 0 1px 0 0 #353430;
+}
+
+/* Для ссылок: основной цвет и эффект дублирования текста */
+.theme-light a {
+  position: relative;
+  color: #353430;
+  text-decoration: none;
+  display: inline-block; /* для правильного позиционирования псевдоэлемента */
+}
+
+/* Дублирование текста с отклонением */
+.theme-light a::after {
+  content: attr(data-text); /* нужно указывать data-text с текстом ссылки */
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  color: #FF8DCB;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Подчеркивание под текстом при hover */
+.theme-light a:hover {
+  text-decoration: underline;
+  text-decoration-color: #353430; /* то же, что и цвет текста */
+}
+
+/* Обводка вокруг ссылки при фокусе */
+.theme-light a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px #353430;
 }
