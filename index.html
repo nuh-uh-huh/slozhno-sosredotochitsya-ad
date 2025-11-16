@@ -4,9 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Метатег color-scheme с основной темой первой -->
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Подключение файлов CSS в порядке от общих к специфичным -->
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/dark.css" />
+    <link rel="stylesheet" href="./styles/light.css" />
+
+    <!-- Подключение других стилей (если есть), например, глобальные -->
+    <link rel="stylesheet" href="./styles/globals.css" />
+
+    <!-- Фавиконка для вкладки -->
+    <link rel="icon" href="./images/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+
     <title>Сложно сосредоточиться</title>
-    <script src="./scripts/script.js"></script>
+
+    <!-- Скрипт можно оставить тут или вынести вbody, если нужен быстрый запуск -->
+    <script src="./scripts/script.js" defer></script>
   </head>
+
   <body class="page">
     <header class="header decorated-zone">
       <nav class="header__theme-menu">
