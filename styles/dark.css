@@ -1,152 +1,29 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
-:root.theme-dark {
-  /* Цвета */
-  --accent-color: #ff0070;
-  --bg-color: #1a1b22;
-  --text-color: #f1b2ce;
-  --title-bg: #ff0070;
-  --section-bg: #313043;
-  --gallery-bg: #1a1b22;
-  --footer-bg: #1a1b22;
-  --decor-corner: #ff0070;
-  --decor-rec: #ff0070;
-
-  /* Тени */
-  --header-shadow: 4px 4px 0 var(--accent-color);
-  --link-shadow: 2px 2px 0 var(--accent-color);
-
-  /* Шрифты и размеры */
-  --font-family: 'IBM Plex Mono', monospace;
-  --font-size-base: 1.125rem; /* 18px */
-  --heading-font-size-min: 2.5rem; /* 40px, mobile min */
-  --heading-font-size-max: 9.8125rem; /* desktop max */
-
-  /* Layout */
-  --main-padding: 1rem;
-  --grid-gap: 1.25rem;
-  --border-radius: 12px;
-  --min-section-width: 375px;
-
-  /* Кнопки, интерактив */
-  --focus-outline: 2px solid var(--accent-color);
-  --transition-duration: .2s;
-
-  /* Для изображений */
-  --image-shadow: 0 4px 32px 0 rgba(0,0,0,0.08);
-
-  /* Для отступов и декоративной графики */
-  --gap-header-footer: 20px;
-  --corner-size: 36px;
-}
-
-.theme-dark .page {
-  background-color: #000028;
-}
-
-/* Основной цвет текста для кнопок */
-.theme-dark .header__theme-menu-button {
-  color: #FF0070;
-  border: 1px solid transparent; /* по умолчанию прозрачная граница */
-  position: relative;
-  background: none;
-  cursor: pointer;
-}
-
-/* Текст кнопок с цветом #FF0070 */
-.theme-dark .header__theme-menu-button:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-/* Граница кнопки при выбранном состоянии */
-.theme-dark .header__theme-menu-button.header__theme-menu-button_active {
-  border-color: #FF0070;
-  pointer-events: none;
-}
-
-/* Граница кнопки при наведении */
-.theme-dark .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
-  border-color: rgba(255, 0, 112, 0.4); /* #FF007066 с прозрачностью 40% */
-  /* opacity: 0.4; */
-}
-
-/* Линия под кнопкой при фокусе */
-.theme-dark .header__theme-menu-button:focus-visible {
-  box-shadow: 0 1px 0 0 #FF0070;
-}
-
-/* Стили для ссылок с цветом текста #F1B2CE и дублированием с отклонением */
-.theme-dark a {
-  color: #F1B2CE;
-  position: relative;
-  text-decoration: none;
-  display: inline-block;
-}
-
-/* Дублирование текста с отклонением на 2px вниз и вправо */
-.theme-dark a::after {
-  content: attr(data-text); /* нужно добавить data-text с текстом ссылки в HTML */
-  position: absolute;
-  left: 2px;
-  top: 2px;
-  color: #FF0070;
-  z-index: -1;
-  pointer-events: none;
-  user-select: none;
-}
-
-/* Подчеркивание текста ссылки при hover */
-.theme-dark a:hover {
-  text-decoration: underline;
-  text-decoration-color: #FF0070;
-}
-
-/* Рамка вокруг ссылки при фокусе */
-.theme-dark a:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 1px #F1B2CE;
-}
-
-:root.theme-dark {
-  --background-image: url('../images/cover-image-dark.png');
+.page.theme_dark {
+  --background-image: url("../images/cover-image-dark.png");
+  --visible: visible;
+  --main-text-color: #f1b2ce;
   --background-color: #000028;
-  --accent-color: #FF0070;
-  --button-text-color: #FF0070;
-  --button-border-default: transparent;
-  --button-border-active: #FF0070;
-  --button-border-hover: rgba(53, 52, 48, 0.4);
-  --text-color-primary: #F1B2CE;
-  --text-shadow: none; /* Можно скорректировать или убрать, если надо */
+  --main-header-color: #db00ff;
+  --button-color: #ff0070;
+  --button-hover-border: #ff007066;
+  --section-header-color: #ff0070;
+  --article-header-color: #000028;
+  --article-background-color: #ff0070;
+  --link-shadow-color: #ff0070;
 }
 
-/* Фоновое изображение страницы */
-.page {
-  background-image: var(--background-image);
-  background-color: var(--background-color);
-}
-
-/* Блок «Запись» - если имеется, задайте нужное изображение через переменную */
-.record-block {
-  background-image: url('../images/cover-image-dark.png');
-  /* или другая картинка для светлой темы */
-}
-
-/* Стиль кнопок в шапке */
-.header__theme-menu-button {
-  color: var(--button-text-color);
-  border-color: var(--button-border-default);
-}
-
-.header__theme-menu-button_active {
-  border-color: var(--button-border-active);
-}
-
-.header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
-  border-color: var(--button-border-hover);
-  opacity: 1; /* чтобы текст всегда был непрозрачным */
+@media (prefers-color-scheme: dark) {
+  .page {
+    --main-text-color: #f1b2ce;
+    --background-color: #000028;
+    --main-header-color: #db00ff;
+    --button-color: #ff0070;
+    --button-hover-border: #ff007066;
+    --section-header-color: #ff0070;
+    --article-header-color: #000028;
+    --article-background-color: #ff0070;
+    --link-shadow-color: #ff0070;
+    --background-image: url("../images/cover-image-dark.png");
+    --visible: visible;
+  }
 }

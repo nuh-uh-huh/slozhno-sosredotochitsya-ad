@@ -1,191 +1,29 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
-:root.theme-dark {
-  --accent-color: #ff8dcb;
-  --text-color-primary: #353430;
-  --button-text-color: #353430;
-  --button-border-default: transparent;
-  --button-border-active: #353430;
-  --button-border-hover: rgba(53, 52, 48, 0.4);
-
-  --background-image: url('../images/cover-image-light.png');
+.page.theme_light {
+  --background-image: url("../images/cover-image-light.png");
+  --visible: hidden;
+  --main-text-color: #353430;
   --background-color: #fff1f7;
-
-  --text-shadow: 4px 4px 0 var(--accent-color);
-
-  /* размеры и шрифты обычно не меняются */
-}
-
-
-:root.theme-light {
-  --accent-color: #ff8dcb;
-  --bg-color: #fff1f7;
-  --text-color: #353430;
-  --title-bg: #ff8dcb;
-  --section-bg: #fff1f7;
-  --gallery-bg: #fff;
-  --footer-bg: #fff1f7;
-  --decor-corner: #353430;
-  --decor-rec: #353430;
-
-  --header-shadow: 4px 4px 0 var(--accent-color);
-  --link-shadow: 2px 2px 0 var(--accent-color);
-
-  --font-family: 'IBM Plex Mono', monospace;
-  --font-size-base: 1.125rem;
-  --heading-font-size-min: 2.5rem;
-  --heading-font-size-max: 9.8125rem;
-
-  --main-padding: 1rem;
-  --grid-gap: 1.25rem;
-  --border-radius: 12px;
-  --min-section-width: 375px;
-
-  --focus-outline: 2px solid var(--accent-color);
-  --transition-duration: .2s;
-
-  --image-shadow: 0 4px 32px 0 rgba(0,0,0,0.04);
-
-  --gap-header-footer: 20px;
-  --corner-size: 36px;
+  --main-header-color: #ffc2e6;
+  --button-color: #353430;
+  --button-hover-border: #32312d66;
+  --section-header-color: #353430;
+  --article-header-color: #353430;
+  --article-background-color: #ff8dcb;
+  --link-shadow-color: #ff8dcb;
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --accent-color: #ff8dcb;
-    --bg-color: #fff1f7;
-    --text-color: #353430;
-    --title-bg: #ff8dcb;
-    --section-bg: #fff1f7;
-    --gallery-bg: #fff;
-    --footer-bg: #fff1f7;
-    --decor-corner: #353430;
-    --decor-rec: #353430;
-
-    --header-shadow: 4px 4px 0 var(--accent-color);
-    --link-shadow: 2px 2px 0 var(--accent-color);
-
-    --font-family: 'IBM Plex Mono', monospace;
-    --font-size-base: 1.125rem;
-    --heading-font-size-min: 2.5rem;
-    --heading-font-size-max: 9.8125rem;
-
-    --main-padding: 1rem;
-    --grid-gap: 1.25rem;
-    --border-radius: 12px;
-    --min-section-width: 375px;
-
-    --focus-outline: 2px solid var(--accent-color);
-    --transition-duration: .2s;
-
-    --image-shadow: 0 4px 32px 0 rgba(0,0,0,0.04);
-
-    --gap-header-footer: 20px;
-    --corner-size: 36px;
+  .page {
+    --main-text-color: #353430;
+    --background-color: #fff1f7;
+    --main-header-color: #ffc2e6;
+    --button-color: #353430;
+    --button-hover-border: #32312d66;
+    --section-header-color: #353430;
+    --article-header-color: #353430;
+    --article-background-color: #ff8dcb;
+    --link-shadow-color: #ff8dcb;
+    --background-image: url("../images/cover-image-light.png");
+    --visible: hidden;
   }
-}
-
-
-.theme-light .page {
-  background-color: #FFF1F7;
-}
-
-/* Цвет текста кнопок */
-.theme-light .header__theme-menu-button {
-  color: #353430;
-  border: 1px solid transparent; /* по умолчанию прозрачная граница */
-  background: none;
-  cursor: pointer;
-  position: relative;
-}
-
-/* Стиль для выбранной кнопки */
-.theme-light .header__theme-menu-button.header__theme-menu-button_active {
-  border-color: #353430;
-  pointer-events: none;
-}
-
-/* Стиль для кнопки при наведении */
-.theme-light .header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
-  border-color: rgba(53, 52, 48, 0.4); /* #353430 с прозрачностью 40% */
-}
-
-/* Линия под кнопкой при фокусе */
-.theme-light .header__theme-menu-button:focus-visible {
-  box-shadow: 0 1px 0 0 #353430;
-}
-
-/* Для ссылок: основной цвет и эффект дублирования текста */
-.theme-light a {
-  position: relative;
-  color: #353430;
-  text-decoration: none;
-  display: inline-block; /* для правильного позиционирования псевдоэлемента */
-}
-
-/* Дублирование текста с отклонением */
-.theme-light a::after {
-  content: attr(data-text); /* нужно указывать data-text с текстом ссылки */
-  position: absolute;
-  left: 2px;
-  top: 2px;
-  color: #FF8DCB;
-  z-index: -1;
-  pointer-events: none;
-  user-select: none;
-}
-
-/* Подчеркивание под текстом при hover */
-.theme-light a:hover {
-  text-decoration: underline;
-  text-decoration-color: #353430; /* то же, что и цвет текста */
-}
-
-/* Обводка вокруг ссылки при фокусе */
-.theme-light a:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 1px #353430;
-}
-
-:root {
-  --background-image: url('../images/cover-image-light.png');
-  --background-color: #fff1f7;
-  --accent-color: #ff8dcb;
-  --button-text-color: #353430;
-  --button-border-default: transparent;
-  --button-border-active: #353430;
-  --button-border-hover: rgba(53, 52, 48, 0.4);
-  --text-color-primary: #353430;
-  --text-shadow: none; /* Можно скорректировать или убрать, если надо */
-}
-
-/* Фоновое изображение страницы */
-.page {
-  background-image: var(--background-image);
-  background-color: var(--background-color);
-}
-
-/* Блок «Запись» - если имеется, задайте нужное изображение через переменную */
-.record-block {
-  background-image: url('../images/cover-image-light.png');
-  /* или другая картинка для светлой темы */
-}
-
-/* Стиль кнопок в шапке */
-.header__theme-menu-button {
-  color: var(--button-text-color);
-  border-color: var(--button-border-default);
-}
-
-.header__theme-menu-button_active {
-  border-color: var(--button-border-active);
-}
-
-.header__theme-menu-button:hover:not(.header__theme-menu-button_active) {
-  border-color: var(--button-border-hover);
-  opacity: 1; /* чтобы текст всегда был непрозрачным */
 }
